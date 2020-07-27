@@ -1,0 +1,129 @@
+body {
+    
+    text-align: center;
+    background-color: lightgray;
+}
+#turn {
+    color: red;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.game-board{
+    display: grid;
+    background-color: white;
+    height: 700px;
+    width: 700px;
+    border: 2px solid black;
+    grid-template-columns: 1.6fr 1fr 1.6fr;
+    grid-template-rows: 1.6fr 1fr 1.6fr;
+}
+
+.player-Box {
+    display: flex;
+    border: 20px solid white;
+    background-color:white;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.square-yellow {
+    background-color: white;
+    border: 40px groove yellow;
+    
+
+}
+.square-blue {
+    background-color: white;
+    border: 40px groove #307ef3;
+    
+}
+.square-green {
+    background-color: white;
+    border: 40px ridge #24f124;
+    
+}
+.square-red {
+    background-color: white;
+    border: 40px groove red;
+     
+}
+.yellow-one, .yellow-two, .yellow-three, .yellow-four {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient(yellow, #d4d412);
+    height: 40px;
+    width: 40px;
+}
+
+/*
+
+
+.blue-one, .blue-two, .blue-three, .blue-four {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient(#307ef3, #0d52bb);
+    height: 40px;
+    width: 40px;
+}
+
+
+.green-one, .green-two, .green-three, .green-four {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient( #24f124,  #0ab30a);
+    height: 40px;
+    width: 40px;
+}
+
+
+.red-one, .red-two, .red-three, .red-four {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient(red, #ce0e0e);
+    height: 40px;
+    width: 40px;
+} */
+
+.home {
+    border: 2px solid black;
+}
+
+.moveBoxVertical {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.moveBoxHorizontal {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.move {
+    border: 1px solid black;
+}
+
+
+
+
+
+/* .container {
+    height: 600px;
+    width: 600px;
+    border: 10px solid black;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 5fr ;
+    grid-template-rows: 5fr 1fr 1fr 1fr 5fr ;
+    grid-gap: 3px;
+}
+
+.box {
+    background-color: white;
+} */
