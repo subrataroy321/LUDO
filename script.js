@@ -1,6 +1,7 @@
-let dice;
-let rollDice;
+let dice = document.getElementById('dice');;
+let rollDiceButton;
 let turn;
+let diceNum;
 
 
 
@@ -56,60 +57,77 @@ function switchTurn() {
     }
 }
 
+function diceRoller() {
+    diceNum = (Math.floor(Math.random()*6))+1;
+    if(diceNum === 1) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice1.png';
+            dice.alt = '1';
+        },1000);
+        // switchTurn();
+    }else if(diceNum === 2) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice2.png';
+            dice.alt = '2';
+        },1000);
+        // switchTurn();
+    } else if(diceNum === 3) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice3.png';
+            dice.alt = '3';
+        },1000);
+        // switchTurn();
+    } else if(diceNum === 3) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice4.png';
+            dice.alt = '4';
+        },1000);
+        // switchTurn();
+    }else if(diceNum === 5) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice5.png';
+            dice.alt = '5';
+        },1000);
+        // switchTurn();
+    }else if(diceNum === 6) {
+        dice.src = './images/roll-dice.png';
+        setTimeout(function() {
+            dice.src = './images/dice6.png';
+            dice.alt = '6';
+        },1000);
+        document.getElementById('roll-again').textContent = 'Roll Again';
+        playerMove();
+    }
+}
+
+function playerMove() {
+    if (diceNum == 6) {
+        document.querySelectorAll('.redBox').forEach(box => {
+            addEventListener('click', () => {
+            //console.log(e);
+            box.classList.remove('red-one');
+
+            let rStart = document.querySelector('.r-start');
+            let rOne = rStart.classList.add('red-one');
+            rStart.appendChild(rOne);
+        });
+        diceRoller();
+    }); 
+    // else {
+
+    // }
+}
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    dice = document.getElementById('dice');
-    rollDice = document.getElementById('roll-dice');
-    rollDice.addEventListener('click', () => {
-        
-        let num1 = (Math.floor(Math.random()*6))+1;
-        console.log(num1);
-        if(num1 === 1) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice1.png';
-                dice.alt = '1';
-            },1000);
-            // switchTurn();
-        }else if(num1 === 2) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice2.png';
-                dice.alt = '2';
-            },1000);
-            // switchTurn();
-        } else if(num1 === 3) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice3.png';
-                dice.alt = '3';
-            },1000);
-            // switchTurn();
-        } else if(num1 === 3) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice4.png';
-                dice.alt = '4';
-            },1000);
-            // switchTurn();
-        }else if(num1 === 5) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice5.png';
-                dice.alt = '5';
-            },1000);
-            // switchTurn();
-        }else if(num1 === 6) {
-            dice.src = './images/roll-dice.png';
-            setTimeout(function() {
-                dice.src = './images/dice6.png';
-                dice.alt = '6';
-            },1000);
-            // document.getElementById('roll-again').textContent = 'Roll Again';
-           
-        }
-
-
-    })
-
-
+    
+    rollDiceButton = document.getElementById('roll-dice');
+    rollDiceButton.addEventListener('click', diceRoller)
+    
+    
 });

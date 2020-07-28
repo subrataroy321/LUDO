@@ -117,10 +117,10 @@ main{
     
 }
 .box {
- margin: 10px;
+    margin: 10px;
 }
 
-.y-home, .y-start {
+.y-home, .y-start { */
     background-color: yellow;
     text-align: justify;
 }
