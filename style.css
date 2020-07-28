@@ -6,10 +6,17 @@ body {
 #turn {
     color: red;
 }
-
-main{
+.game-floor {
     display: flex;
     justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 200px 700px 200px ;
+    
+}
+
+main{
+    
     margin-top: 10px;
 }
 
@@ -23,60 +30,50 @@ main{
     grid-template-rows: 1.6fr 1fr 1.6fr;
 }
 
-.player-Box {
-    display: flex;
-    border: 20px solid white;
-    background-color:white;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-}
+
+
 
 .square-yellow {
     background-color: white;
-    border: 40px groove yellow;
+    border: 50px groove yellow;
     
 
 }
 .square-blue {
     background-color: white;
-    border: 40px groove #307ef3;
+    border: 50px groove #1aaff5;
     
 }
 .square-green {
     background-color: white;
-    border: 40px ridge #24f124;
+    border: 50px ridge #24f124;
     
 }
 .square-red {
     background-color: white;
-    border: 40px groove red;
+    border: 50px groove red;
      
 }
 .yellow-one, .yellow-two, .yellow-three, .yellow-four {
     border: 1px solid black;
     border-radius: 50%;
-    background-image: linear-gradient(yellow, #d4d412);
+    background-image: linear-gradient(yellow, #a0a011);
     height: 40px;
     width: 40px;
 }
-
-/*
-
 
 .blue-one, .blue-two, .blue-three, .blue-four {
     border: 1px solid black;
     border-radius: 50%;
-    background-image: linear-gradient(#307ef3, #0d52bb);
+    background-image: linear-gradient(#1aaff5, #156386);
     height: 40px;
     width: 40px;
 }
 
-
 .green-one, .green-two, .green-three, .green-four {
     border: 1px solid black;
     border-radius: 50%;
-    background-image: linear-gradient( #24f124,  #0ab30a);
+    background-image: linear-gradient( #24f124,  #107e10);
     height: 40px;
     width: 40px;
 }
@@ -85,10 +82,10 @@ main{
 .red-one, .red-two, .red-three, .red-four {
     border: 1px solid black;
     border-radius: 50%;
-    background-image: linear-gradient(red, #ce0e0e);
+    background-image: linear-gradient(red, #8b0f0f);
     height: 40px;
     width: 40px;
-} */
+} 
 
 .home {
     border: 2px solid black;
@@ -109,21 +106,33 @@ main{
     border: 1px solid black;
 }
 
-
-
-
-
-/* .container {
-    height: 600px;
-    width: 600px;
-    border: 10px solid black;
-    background-color: black;
+.player-Box {
+    margin: 20px;
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr 1fr 5fr ;
-    grid-template-rows: 5fr 1fr 1fr 1fr 5fr ;
-    grid-gap: 3px;
+    /* border: 30px solid white; */
+    background-color:white;
+    
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+}
+.box {
+ margin: 10px;
 }
 
-.box {
-    background-color: white;
-} */
+.y-home, .y-start {
+    background-color: yellow;
+    text-align: justify;
+}
+.b-home, .b-start {
+    background-color: #1aaff5;
+    text-align: justify;
+}
+.r-home, .r-start {
+    background-color: red;
+    text-align: justify;
+}
+.g-home, .g-start {
+    background-color: #24f124;
+    text-align: justify;
+}

@@ -61,23 +61,23 @@ document.addEventListener('DOMContentLoaded', () => {
     rollDice = document.getElementById('roll-dice');
     rollDice.addEventListener('click', () => {
         
-        let num1 = (Math.floor(Math.random()*6));
+        let num1 = (Math.floor(Math.random()*6))+1;
         console.log(num1);
-        if(num1 === 0) {
+        if(num1 === 1) {
             dice.src = './images/roll-dice.png';
             setTimeout(function() {
                 dice.src = './images/dice1.png';
                 dice.alt = '1';
             },1000);
             // switchTurn();
-        }else if(num1 === 1) {
+        }else if(num1 === 2) {
             dice.src = './images/roll-dice.png';
             setTimeout(function() {
                 dice.src = './images/dice2.png';
                 dice.alt = '2';
             },1000);
             // switchTurn();
-        } else if(num1 === 2) {
+        } else if(num1 === 3) {
             dice.src = './images/roll-dice.png';
             setTimeout(function() {
                 dice.src = './images/dice3.png';
@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 dice.alt = '4';
             },1000);
             // switchTurn();
-        }else if(num1 === 4) {
+        }else if(num1 === 5) {
             dice.src = './images/roll-dice.png';
             setTimeout(function() {
                 dice.src = './images/dice5.png';
                 dice.alt = '5';
             },1000);
             // switchTurn();
-        }else if(num1 === 5) {
+        }else if(num1 === 6) {
             dice.src = './images/roll-dice.png';
             setTimeout(function() {
                 dice.src = './images/dice6.png';

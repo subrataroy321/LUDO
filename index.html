@@ -8,12 +8,16 @@
 </head>
 <body>
     <header> 
-        <h1>Welcome to LODO</h1>
+        <h1>Welcome to LUDO</h1>
     </header>
+    <div class= "game-floor">
         <div class= "dice">
-            <h3 class="playersturn">Its <span id= "turn">Red's</span> turn</h3>
-            <h4 id="roll-again"></h4>
-            <img id= "dice" src="./images/roll-dice.png" alt="rolling" width= "75px" height= "75px">
+            <h2 class="playersturn">Its <span id= "turn">Red's</span> turn</h2>
+            <h3 id="roll-again"></h3>
+            </br>
+            </br>
+            <img id= "dice" src="./images/roll-dice.png" alt="rolling" >
+            </br>
             </br>
             <button id= "roll-dice">Roll Dice</button>
             </br>
@@ -23,10 +27,10 @@
         <div class= "game-board">
             <div class="square-yellow">
                 <div class="player-Box">
-                    <div class="yellow-one"></div>
-                    <div class="yellow-two"></div>
-                    <div class="yellow-three"></div>
-                    <div class="yellow-four"></div>
+                    <div class="box yellow-one">1</div>
+                    <div class="box yellow-two">2</div>
+                    <div class="box yellow-three">3</div>
+                    <div class="box yellow-four">4</div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
@@ -34,42 +38,42 @@
                 <div class="move">2</div>
                 <div class="move">3</div>
                 <div class="move">4</div>
-                <div class="move">5</div>
-                <div class="move">6</div>
+                <div class="move b-home">5</div>
+                <div class="move b-start">6</div>
                 <div class="move">7</div>
-                <div class="move">8</div>
+                <div class="move b-home">8</div>
                 <div class="move">9</div>
                 <div class="move">10</div>
-                <div class="move">11</div>
+                <div class="move b-home">11</div>
                 <div class="move">12</div>
                 <div class="move">13</div>
-                <div class="move">14</div>
+                <div class="move b-home">14</div>
                 <div class="move">15</div>
                 <div class="move">16</div>
-                <div class="move">17</div>
+                <div class="move b-home">17</div>
                 <div class="move">18</div>
             </div>
             <div class="square-blue">
-                <div class="player-Box">
-                    <div class="blue-one"></div>
-                    <div class="blue-two"></div>
-                    <div class="blue-three"></div>
-                    <div class="blue-four"></div>
+                <div class=" player-Box">
+                    <div class=" box blue-one"></div>
+                    <div class=" box blue-two"></div>
+                    <div class=" box blue-three"></div>
+                    <div class=" box blue-four"></div>
                 </div>
             </div>
             <div class="moveBoxVertical">
                 <div class="move">1</div>
-                <div class="move">2</div>
+                <div class="move y-start">Start</div>
                 <div class="move">3</div>
                 <div class="move">4</div>
                 <div class="move">5</div>
                 <div class="move">6</div>
                 <div class="move">7</div>
-                <div class="move">8</div>
-                <div class="move">9</div>
-                <div class="move">10</div>
-                <div class="move">11</div>
-                <div class="move">12</div>
+                <div class="move y-home">8</div>
+                <div class="move y-home">9</div>
+                <div class="move y-home">10</div>
+                <div class="move y-home">11</div>
+                <div class="move y-home">12</div>
                 <div class="move">13</div>
                 <div class="move">14</div>
                 <div class="move">15</div>
@@ -87,43 +91,44 @@
                 <div class="move">4</div>
                 <div class="move">5</div>
                 <div class="move">6</div>
-                <div class="move">7</div>
-                <div class="move">8</div>
-                <div class="move">9</div>
-                <div class="move">10</div>
-                <div class="move">11</div>
+                <div class="move g-home">7</div>
+                <div class="move g-home">8</div>
+                <div class="move g-home">9</div>
+                <div class="move g-home">10</div>
+                <div class="move g-home">11</div>
                 <div class="move">12</div>
                 <div class="move">13</div>
                 <div class="move">14</div>
                 <div class="move">15</div>
                 <div class="move">16</div>
-                <div class="move">17</div>
+                <div class="move g-start">17</div>
                 <div class="move">18</div>
+                
             </div>
             
             <div class="square-red">
                 <div class="player-Box">
-                    <div class="red-one"></div>
-                    <div class="red-two"></div>
-                    <div class="red-three"></div>
-                    <div class="red-four"></div>
+                    <div class=" box red-one"></div>
+                    <div class=" box red-two"></div>
+                    <div class=" box red-three"></div>
+                    <div class=" box red-four"></div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
                 <div class="move">1</div>
-                <div class="move">2</div>
+                <div class="move r-home">2</div>
                 <div class="move">3</div>
                 <div class="move">4</div>
-                <div class="move">5</div>
+                <div class="move r-home">5</div>
                 <div class="move">6</div>
                 <div class="move">7</div>
-                <div class="move">8</div>
+                <div class="move r-home">8</div>
                 <div class="move">9</div>
                 <div class="move">10</div>
-                <div class="move">11</div>
+                <div class="move r-home">11</div>
                 <div class="move">12</div>
-                <div class="move">13</div>
-                <div class="move">14</div>
+                <div class="move r-start">13</div>
+                <div class="move r-home">14</div>
                 <div class="move">15</div>
                 <div class="move">16</div>
                 <div class="move">17</div>
@@ -131,16 +136,19 @@
             </div>
             <div class="square-green">
                 <div class="player-Box">
-                    <div class="green-one"></div>
-                    <div class="green-two"></div>
-                    <div class="green-three"></div>
-                    <div class="green-four"></div>
+                    <div class=" box green-one"></div>
+                    <div class=" box green-two"></div>
+                    <div class=" box green-three"></div>
+                    <div class=" box green-four"></div>
                 </div>
             </div>
             
         </div>
     </main>
+    <div class="how-to-play">
 
+    </div>
+</div>
     <footer>
         <p>
             Build by Subrata Roy
