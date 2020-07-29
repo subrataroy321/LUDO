@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../codealong/canvas-crawler"
+		},
+		{
+			"path": "../tik-tak-toe"
 		}
 	],
 	"settings": {}

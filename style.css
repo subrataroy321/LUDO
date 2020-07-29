@@ -79,16 +79,25 @@ main{
 }
 
 
-.red-one, .red-two, .red-three, .red-four {
+/* .red-one, .red-two, .red-three, .red-four */
+.redBox, .redOn {
     border: 1px solid black;
     border-radius: 50%;
     background-image: linear-gradient(red, #8b0f0f);
+
     height: 40px;
     width: 40px;
 } 
+.redOn{
+    background-color: red;
+}
 
 .home {
-    border: 2px solid black;
+    /* border: 1px solid black; */
+    border-bottom: 83px solid #e53935;
+    border-top: 83px solid #fff176;
+    border-left: 83px solid #1aaff5;
+    border-right: 83px solid  #24f124;
 }
 
 .moveBoxVertical {
@@ -104,6 +113,9 @@ main{
 }
 .move {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .player-Box {
@@ -120,19 +132,19 @@ main{
     margin: 10px;
 }
 
-.y-home, .y-start { */
+.y-home, .y-start { 
     background-color: yellow;
-    text-align: justify;
+    
 }
 .b-home, .b-start {
     background-color: #1aaff5;
-    text-align: justify;
+    
 }
 .r-home, .r-start {
     background-color: red;
-    text-align: justify;
+    
 }
 .g-home, .g-start {
     background-color: #24f124;
-    text-align: justify;
+    
 }
