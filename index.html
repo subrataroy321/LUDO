@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <audio id="diceAudio">
+        <source src="./sounds/Shake And Roll Dice-SoundBible.com-591494296.mp3" type="audio">
+      </audio>
     <header> 
         <h1>Welcome to LUDO</h1>
     </header>
     <div class= "game-floor">
         <div class= "dice">
-            <h2 class="playersturn">Its <span id= "turn">Red's</span> turn</h2>
+            <h2 class="playersturn">Playing: </br> <span id= "turn">Red</span></h2>
             <h3 id="roll-again"></h3>
             </br>
             </br>
-            <img id= "dice" src="./images/roll-dice.png" alt="rolling" >
+            <img id= "dice" src="./images/roll-dice.png" alt="rolling" height= "150px" width= "150px">
             </br>
             </br>
             <button id= "roll-dice">Roll Dice</button>
@@ -27,10 +30,10 @@
         <div class= "game-board">
             <div class="square-yellow">
                 <div class="player-Box">
-                    <div class="box yellow-one"></div>
-                    <div class="box yellow-two"></div>
-                    <div class="box yellow-three"></div>
-                    <div class="box yellow-four"></div>
+                    <div class="box yellow-circle"></div>
+                    <div class="box yellow-circle"></div>
+                    <div class="box yellow-circle"></div>
+                    <div class="box yellow-circle"></div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
@@ -55,10 +58,10 @@
             </div>
             <div class="square-blue">
                 <div class=" player-Box">
-                    <div class=" box blue-one"></div>
-                    <div class=" box blue-two"></div>
-                    <div class=" box blue-three"></div>
-                    <div class=" box blue-four"></div>
+                    <div class=" box blue-circle"></div>
+                    <div class=" box blue-circle"></div>
+                    <div class=" box blue-circle"></div>
+                    <div class=" box blue-circle"></div>
                 </div>
             </div>
             <div class="moveBoxVertical">
@@ -82,7 +85,7 @@
                 <div class="move">36</div>
             </div>
             <div class="home">
-                
+                <h2>HOME</h2>
             </div>
             <div class="moveBoxVertical">
                 <div class="move">37</div>
@@ -108,13 +111,14 @@
             
             <div class="square-red">
                 <div class="player-Box">
-                    <div class="box redBox red-one"></div>
-                    <div class="box redBox red-two"></div>
-                    <div class="box redBox red-three"></div>
-                    <div class="box redBox red-four"></div>
+                    <div class="box red-circle"></div>
+                    <div class="box red-circle"></div>
+                    <div class="box red-circle"></div>
+                    <div class="box red-circle"></div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
+
                 <div class="move">55</div>
                 <div class="move r-home">56</div>
                 <div class="move">57</div>
@@ -127,7 +131,9 @@
                 <div class="move">64</div>
                 <div class="move r-home">65</div>
                 <div class="move star">★</div>
-                <div class="move r-start star">★</div>
+                <div class="move r-start star">★
+                    <!-- <div class="box redOn"></div> -->
+                </div>
                 <div class="move r-home">68</div>
                 <div class="move">69</div>
                 <div class="move">70</div>
@@ -136,10 +142,10 @@
             </div>
             <div class="square-green">
                 <div class="player-Box">
-                    <div class=" box green-one"></div>
-                    <div class=" box green-two"></div>
-                    <div class=" box green-three"></div>
-                    <div class=" box green-four"></div>
+                    <div class=" box green-circle"></div>
+                    <div class=" box green-circle"></div>
+                    <div class=" box green-circle"></div>
+                    <div class=" box green-circle"></div>
                 </div>
             </div>
             

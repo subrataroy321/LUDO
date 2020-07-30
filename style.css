@@ -6,6 +6,13 @@ body {
 #turn {
     color: red;
 }
+button {
+    height: 35px;
+    width: 130px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
 .game-floor {
     display: flex;
     justify-content: center;
@@ -54,50 +61,69 @@ main{
     border: 50px groove red;
      
 }
-.yellow-one, .yellow-two, .yellow-three, .yellow-four {
+.yellow-circle {
     border: 1px solid black;
     border-radius: 50%;
     background-image: linear-gradient(yellow, #a0a011);
     height: 40px;
     width: 40px;
+    margin: 10px;
 }
 
-.blue-one, .blue-two, .blue-three, .blue-four {
+.blue-circle {
     border: 1px solid black;
     border-radius: 50%;
     background-image: linear-gradient(#1aaff5, #156386);
     height: 40px;
     width: 40px;
+    margin: 10px;
+   
 }
-
-.green-one, .green-two, .green-three, .green-four {
+.blueOn0, .blueOn1, .blueOn2, .blueOn3 {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient(#1aaff5, #156386);
+    height: 40px;
+    width: 40px;
+} 
+.green-circle {
     border: 1px solid black;
     border-radius: 50%;
     background-image: linear-gradient( #24f124,  #107e10);
     height: 40px;
     width: 40px;
+    margin: 10px
 }
 
 
-/* .red-one, .red-two, .red-three, .red-four */
-.redBox, .redOn {
+
+.red-circle {
     border: 1px solid black;
     border-radius: 50%;
     background-image: linear-gradient(red, #8b0f0f);
-
+    margin: 10px;
     height: 40px;
     width: 40px;
 } 
-.redOn{
-    background-color: red;
-}
+
+.redOn0, .redOn1, .redOn2, .redOn3 {
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: linear-gradient(red, #8b0f0f);
+    height: 40px;
+    width: 40px;
+} 
+
 
 .home {
     /* border: 1px solid black; */
-    border-bottom: 83px solid #e53935;
-    border-top: 83px solid #fff176;
-    border-left: 83px solid #1aaff5;
-    border-right: 83px solid  #24f124;
+    border-bottom: 33px solid #e53935;
+    border-left: 33px solid #fff176;
+    border-top: 33px solid #1aaff5;
+    border-right: 33px solid  #24f124;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .moveBoxVertical {
@@ -128,9 +154,9 @@ main{
     grid-template-rows: 1fr 1fr;
     
 }
-.box {
+/* .box {
     margin: 10px;
-}
+} */
 
 .y-home, .y-start { 
     background-color: yellow;
