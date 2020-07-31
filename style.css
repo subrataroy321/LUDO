@@ -1,122 +1,126 @@
 body {
-    
     text-align: center;
-    background-color: lightgray;
+    background-image: url(./images/newbackground\ copy.jpg);
+    background-size: cover;
+    color: white;
 }
 #turn {
     color: red;
 }
-button {
+#roll-dice {
     height: 35px;
     width: 130px;
     font-size: 20px;
     font-weight: bold;
-
+}
+.star {
+    background-image: url(./images/star.png);
+    background-size: contain;
+}
+.red-arrow {
+    background-image: url(./images/red-arrow.png);
+    background-size: contain;
+}
+.blue-arrow {
+    background-image: url(./images/blue-arrow.png);
+    background-size: contain;
+}
+.green-arrow {
+    background-image: url(./images/green-arrow.png);
+    background-size: contain;
+}
+.yellow-arrow {
+    background-image: url(./images/yellow-arrow.png);
+    background-size: contain;
+}
+.arrow-up {
+    background-image: url(./images/arrow-up\ copy.png);
+    background-size: contain;
+}
+.arrow-down {
+    background-image: url(./images/arrow-down\ copy.png);
+    background-size: contain;
+}
+.arrow-left {
+    background-image: url(./images/arrow-left\ copy.png);
+    background-size: contain;
+}
+.arrow-right {
+    background-image: url(./images/arrow-right\ copy.png);
+    background-size: contain;
 }
 .game-floor {
     display: flex;
     justify-content: center;
     align-items: center;
     display: grid;
-    grid-template-columns: 200px 700px 200px ;
-    
+    grid-template-columns: 200px 750px 200px ;
 }
-
 main{
-    
     margin-top: 10px;
 }
-
 .game-board{
     display: grid;
     background-color: white;
-    height: 700px;
-    width: 700px;
+    height: 750px;
+    width: 750px;
     border: 2px solid black;
     grid-template-columns: 1.6fr 1fr 1.6fr;
     grid-template-rows: 1.6fr 1fr 1.6fr;
 }
-
-
-
-
 .square-yellow {
     background-color: white;
     border: 50px groove yellow;
-    
-
 }
 .square-blue {
     background-color: white;
     border: 50px groove #1aaff5;
-    
 }
 .square-green {
     background-color: white;
     border: 50px ridge #24f124;
-    
 }
 .square-red {
     background-color: white;
     border: 50px groove red;
-     
 }
 .yellow-circle {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient(yellow, #a0a011);
-    height: 40px;
-    width: 40px;
-    margin: 10px;
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    background-image: url(./images/yellowCircle.png);
+    background-size: cover;
 }
-
 .blue-circle {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient(#1aaff5, #156386);
-    height: 40px;
-    width: 40px;
-    margin: 10px;
-   
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    background-image: url(./images/blueCircle.png);
+    background-size: cover;
 }
 .blueOn0, .blueOn1, .blueOn2, .blueOn3 {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient(#1aaff5, #156386);
-    height: 40px;
-    width: 40px;
+    background-image: url(./images/blueCircle.png);
+    background-size: cover ;
 } 
 .green-circle {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient( #24f124,  #107e10);
-    height: 40px;
-    width: 40px;
-    margin: 10px
+    height: 50px;
+    width: 50px;
+    margin: 15px;
+    background-image: url(./images/greenCircle.png);
+    background-size: cover;
 }
-
-
-
 .red-circle {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient(red, #8b0f0f);
-    margin: 10px;
-    height: 40px;
-    width: 40px;
+    margin: 15px;
+    height: 50px;
+    width: 50px; 
+    background-image: url(./images/redCircle.png);
+    background-size: cover;
 } 
-
 .redOn0, .redOn1, .redOn2, .redOn3 {
-    border: 1px solid black;
-    border-radius: 50%;
-    background-image: linear-gradient(red, #8b0f0f);
-    height: 40px;
-    width: 40px;
+    background-image: url(./images/redCircle.png);
+    background-size: cover;
 } 
-
-
 .home {
-    /* border: 1px solid black; */
     border-bottom: 33px solid #e53935;
     border-left: 33px solid #fff176;
     border-top: 33px solid #1aaff5;
@@ -124,53 +128,148 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
-
 .moveBoxVertical {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px;
 }
-
 .moveBoxHorizontal {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    grid-template-columns: 50px 50px 50px;
 }
 .move {
     border: 1px solid black;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
-
 .player-Box {
     margin: 20px;
     display: grid;
-    /* border: 30px solid white; */
     background-color:white;
-    
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    
 }
-/* .box {
-    margin: 10px;
-} */
-
 .y-home, .y-start { 
-    background-color: yellow;
-    
+    background-color: #ffff00;
+    background-size: 100%;
 }
 .b-home, .b-start {
     background-color: #1aaff5;
-    
+    background-size: 100%;
 }
 .r-home, .r-start {
-    background-color: red;
-    
+    background-color: #ff0000;
+    background-size: 100%;
 }
 .g-home, .g-start {
     background-color: #24f124;
-    
+    background-size: 100%;
 }
+.welcome {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .welcome-content {
+    background-color: transparent;
+    margin: auto;
+  }
+.close1 {
+    color: #aaaaaa;
+    float: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close1:hover,
+  .close1:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .winner {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .winner-content {
+    background-image: url("./images/background.jpg") ;
+    opacity: 0.5;
+    margin: auto;
+  }
+.close2 {
+    color: #aaaaaa;
+    float: center;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close2:hover,
+  .close2:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.gameRules {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  .gameRules-content {
+    background-color: rgb(114, 11, 11);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 85%;
+  }
+  .close3 {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close3:hover,
+  .close3:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #myBtn {
+    background-color: transparent;
+    border: transparent;
+    height: 45px;
+    width: 200px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+  }
+  p {
+      font-size: 25px;
+      color: white;
+  }

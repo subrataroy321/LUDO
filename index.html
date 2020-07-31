@@ -7,16 +7,52 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <audio id="diceAudio">
-        <source src="./sounds/Shake And Roll Dice-SoundBible.com-591494296.mp3" type="audio">
-      </audio>
+    <div id="welcome" class="welcome">
+        <div class="welcome-content">
+          <span class="close1">&times;</span>
+          <img src="./images/welcome1.png" alt="Welcome" srcset="">
+        </div>
+    </div>
+    <div id="winner" class="winner">
+        <div class="winner-content">
+          <span class="close2">&times;</span>
+          <h1><span id="gameWinner"></span> </br> WON THE GAME  </h1>
+        </div>
+    </div>
     <header> 
-        <h1>Welcome to LUDO</h1>
+        <div class="how-to-play">
+            <button id="myBtn">How To Play ?</button>
+            <div id="gameRules" class="gameRules">
+                <div class="gameRules-content">
+                    <span class="close3">&times;</span>
+                    <p>HOW TO PLAY ?</p>
+                    <p>Players alternate turns in a clockwise direction.
+                    </br></br>
+                    To enter a token into play from its yard to its starting square, a player must roll a 6. 
+                    The player has to draw a token from start home every time he gets a 6 unless start home is empty or the start box has 2 own tokens (is doubled). 
+                    If the player has no tokens yet in play and rolls other than a 6, the turn passes to the next player.
+                    </br></br>
+                    Players must always move a token according to the die value rolled. 
+                    </br></br>
+                    Once a player has one or more tokens in play, he selects a token and moves it forwards along the track the number of squares indicated by the die. 
+                    </br></br>
+                    Rolling a 6 earns the player an additional or "bonus" roll in that turn. If the bonus roll results in a 6 again, the player earns again an additional bonus roll.
+                    If the third roll is also a 6, the player may not move and the turn immediately passes to the next player.
+                    </br></br>
+                    If the advance of a token ends on a square occupied by an opponent's token, the opponent token is returned to its owner's yard. The returned token can be reentered into play only when the owner rolls a 6.
+                    </br></br>
+                    A player's home column squares are always safe since no opponent may enter them. In the home column, you cannot jump over your token. Roll the exact number needed to get each token onto the center home.
+                    </p>
+                </div>
+            </div>
+        </div>
     </header>
     <div class= "game-floor">
         <div class= "dice">
-            <h2 class="playersturn">Playing: </br> <span id= "turn">Red</span></h2>
-            <h3 id="roll-again"></h3>
+            <h2>2 Players Only</h2>
+            </br></br>
+            <h1 class="playersturn">Playing: </br></br> <span id= "turn">Red</span></h1>
+            <h2 id="roll-again"></h2>
             </br>
             </br>
             <img id= "dice" src="./images/roll-dice.png" alt="rolling" height= "150px" width= "150px">
@@ -25,43 +61,42 @@
             <button id= "roll-dice">Roll Dice</button>
             </br>
         </div> 
-
     <main>
         <div class= "game-board">
             <div class="square-yellow">
                 <div class="player-Box">
-                    <div class="box yellow-circle"></div>
-                    <div class="box yellow-circle"></div>
-                    <div class="box yellow-circle"></div>
-                    <div class="box yellow-circle"></div>
+                    <div class="yellowBox yellow-circle"></div>
+                    <div class="yellowBox yellow-circle"></div>
+                    <div class="yellowBox yellow-circle"></div>
+                    <div class="yellowBox yellow-circle"></div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
                 <div class="move">1</div>
-                <div class="move">2</div>
+                <div class="move blue-arrow">2</div>
                 <div class="move">3</div>
                 <div class="move">4</div>
                 <div class="move b-home">5</div>
-                <div class="move b-start star">★</div>
-                <div class="move star">★</div>
+                <div class="move b-start star"></div>
+                <div class="move star"></div>
                 <div class="move b-home">8</div>
                 <div class="move">9</div>
-                <div class="move">10</div>
+                <div class="move arrow-up">10</div>
                 <div class="move b-home">11</div>
                 <div class="move">12</div>
                 <div class="move">13</div>
                 <div class="move b-home">14</div>
-                <div class="move">15</div>
+                <div class="move arrow-down">15</div>
                 <div class="move">16</div>
                 <div class="move b-home">17</div>
                 <div class="move">18</div>
             </div>
             <div class="square-blue">
                 <div class=" player-Box">
-                    <div class=" box blue-circle"></div>
-                    <div class=" box blue-circle"></div>
-                    <div class=" box blue-circle"></div>
-                    <div class=" box blue-circle"></div>
+                    <div class=" blueBox blue-circle"></div>
+                    <div class=" blueBox blue-circle"></div>
+                    <div class=" blueBox blue-circle"></div>
+                    <div class=" blueBox blue-circle"></div>
                 </div>
             </div>
             <div class="moveBoxVertical">
@@ -69,9 +104,9 @@
                 <div class="move y-start star">★</div>
                 <div class="move">21</div>
                 <div class="move">22</div>
-                <div class="move">23</div>
+                <div class="move arrow-right">23</div>
                 <div class="move">24</div>
-                <div class="move">25</div>
+                <div class="move yellow-arrow">25</div>
                 <div class="move y-home">26</div>
                 <div class="move y-home">27</div>
                 <div class="move y-home">28</div>
@@ -80,7 +115,7 @@
                 <div class="move">31</div>
                 <div class="move">32</div>
                 <div class="move star">★</div>
-                <div class="move">34</div>
+                <div class="move arrow-left">34</div>
                 <div class="move">35</div>
                 <div class="move">36</div>
             </div>
@@ -90,7 +125,7 @@
             <div class="moveBoxVertical">
                 <div class="move">37</div>
                 <div class="move">38</div>
-                <div class="move">39</div>
+                <div class="move arrow-right">39</div>
                 <div class="move star">★</div>
                 <div class="move">41</div>
                 <div class="move">42</div>
@@ -99,68 +134,59 @@
                 <div class="move g-home">45</div>
                 <div class="move g-home">46</div>
                 <div class="move g-home">47</div>
-                <div class="move">48</div>
+                <div class="move green-arrow">48</div>
                 <div class="move">49</div>
-                <div class="move">50</div>
+                <div class="move arrow-left">50</div>
                 <div class="move">51</div>
                 <div class="move">52</div>
                 <div class="move g-start star">★</div>
                 <div class="move">54</div>
-                
             </div>
-            
             <div class="square-red">
                 <div class="player-Box">
-                    <div class="box red-circle"></div>
-                    <div class="box red-circle"></div>
-                    <div class="box red-circle"></div>
-                    <div class="box red-circle"></div>
+                    <div class="redBox red-circle"></div>
+                    <div class="redBox red-circle"></div>
+                    <div class="redBox red-circle"></div>
+                    <div class="redBox red-circle"></div>
                 </div>
             </div>
             <div class="moveBoxHorizontal">
-
                 <div class="move">55</div>
                 <div class="move r-home">56</div>
                 <div class="move">57</div>
-                <div class="move">58</div>
+                <div class="move arrow-up">58</div>
                 <div class="move r-home">59</div>
                 <div class="move">60</div>
                 <div class="move">61</div>
                 <div class="move r-home">62</div>
-                <div class="move">63</div>
+                <div class="move arrow-down">63</div>
                 <div class="move">64</div>
                 <div class="move r-home">65</div>
                 <div class="move star">★</div>
-                <div class="move r-start star">★
-                    <!-- <div class="box redOn"></div> -->
-                </div>
+                <div class="move r-start star">★</div>
                 <div class="move r-home">68</div>
                 <div class="move">69</div>
                 <div class="move">70</div>
-                <div class="move">71</div>
+                <div class="move red-arrow"></div>
                 <div class="move">72</div>
             </div>
             <div class="square-green">
                 <div class="player-Box">
-                    <div class=" box green-circle"></div>
-                    <div class=" box green-circle"></div>
-                    <div class=" box green-circle"></div>
-                    <div class=" box green-circle"></div>
+                    <div class="greenBox green-circle"></div>
+                    <div class="greenBox green-circle"></div>
+                    <div class="greenBox green-circle"></div>
+                    <div class="greenBox green-circle"></div>
                 </div>
             </div>
             
         </div>
     </main>
-    <div class="how-to-play">
+    <div>
 
     </div>
-</div>
     <footer>
-        <p>
             Build by Subrata Roy
-        </p>
     </footer>
-
     <script src="./script.js"></script>
 </body>
 </html>
