@@ -43,11 +43,7 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice1.png';
                 dice.alt = '1';
                 document.getElementById('roll-again').textContent = '';
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         }else if(diceNum === 2) {
             dice.src = './images/roll-dice.png';
@@ -55,11 +51,7 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice2.png';
                 dice.alt = '2';
                 document.getElementById('roll-again').textContent = '';
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         } else if(diceNum === 3) {
             dice.src = './images/roll-dice.png';
@@ -67,11 +59,7 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice3.png';
                 dice.alt = '3';
                 document.getElementById('roll-again').textContent = '';
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         } else if(diceNum === 4) {
             dice.src = './images/roll-dice.png';
@@ -79,11 +67,7 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice4.png';
                 dice.alt = '4';
                 document.getElementById('roll-again').textContent = '';
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         }else if(diceNum === 5) {
             dice.src = './images/roll-dice.png';
@@ -91,11 +75,7 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice5.png';
                 dice.alt = '5';
                 document.getElementById('roll-again').textContent = '';
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         }else if(diceNum === 6) {
             dice.src = './images/roll-dice.png';
@@ -103,14 +83,11 @@ This is a web based game. It is built using HTML, CSS and JavaScript Programing.
                 dice.src = './images/dice6.png';
                 dice.alt = '6';
                 document.getElementById('roll-again').textContent = 'Roll Again'; 
-                if (player === 0) {
-                    redPlayerMove();
-                }else if (player===1) {
-                    bluePlayerMove();
-                }
+                detectPlayer();
             },1000);
         }
     }
+    
 ```
 
 This function rolls when it is called. Using javascript function `(Math.floor(Math.random()*6))+1;` returns a random number between a 1-6 and render an image od dice. Also it checks which player is playing the game and allows that player to make move if possible.
@@ -163,106 +140,56 @@ This function move a red circle / red token from its start home yard/box to the 
             e.target.classList.remove('blueOn3');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn1') && e.target.classList.value.includes( 'blueOn3')) {
             e.target.classList.remove('blueOn3');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn0')&& e.target.classList.value.includes( 'blueOn3')) {
             e.target.classList.remove('blueOn3');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn3')) {
             e.target.classList.remove('blueActive','blueOn3');
             removeRedActive(blueTargetId);
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn1') && e.target.classList.value.includes( 'blueOn2')) {
             e.target.classList.remove('blueOn2');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn0') && e.target.classList.value.includes( 'blueOn2')) {
             e.target.classList.remove('blueOn2');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         }else if (e.target.classList.value.includes('blueOn02')) {
             e.target.classList.remove('blueActive','blueOn2');
             removeRedActive(blueTargetId);
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         }else if (e.target.classList.value.includes('blueOn0') && e.target.classList.value.includes('blueOn1')) {
             e.target.classList.remove('blueOn1');
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn1');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn1')) {
             e.target.classList.remove('blueActive','blueOn1');
             removeRedActive(blueTargetId);
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn1');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         } else if (e.target.classList.value.includes('blueOn0')) {
             e.target.classList.remove('blueActive','blueOn0');
             removeRedActive(blueTargetId);
             blueMoveArray[blueTargetId].classList.add('blueActive','blueOn0');
             blueMoveArray[blueTargetId].id = blueTargetId;
-            removeEventBlueOn();
-            if (diceNum === 6) {
-                rollDiceClick();
-            } else {
-                switchPlayerTurn();
-            }
+            removeBlueEventSwitchPlayer();
         }
     }
 ```

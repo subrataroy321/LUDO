@@ -84,6 +84,14 @@ function switchPlayerTurn() {
         playerRollCount = 0;
     }
 }
+// function detects which player is playing and calls the player to make a move if there is a move.
+function detectPlayer() {
+    if (player === 0) {
+        redPlayerMove();
+    }else if (player===1) {
+        bluePlayerMove();
+    }
+}
 // function for rolling the dice
 function diceRoller() {
     removeRollDiceClick();
@@ -95,11 +103,7 @@ function diceRoller() {
             dice.src = './images/dice1.png';
             dice.alt = '1';
             document.getElementById('roll-again').textContent = '';
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     }else if(diceNum === 2) {
         dice.src = './images/roll-dice.png';
@@ -107,11 +111,7 @@ function diceRoller() {
             dice.src = './images/dice2.png';
             dice.alt = '2';
             document.getElementById('roll-again').textContent = '';
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     } else if(diceNum === 3) {
         dice.src = './images/roll-dice.png';
@@ -119,11 +119,7 @@ function diceRoller() {
             dice.src = './images/dice3.png';
             dice.alt = '3';
             document.getElementById('roll-again').textContent = '';
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     } else if(diceNum === 4) {
         dice.src = './images/roll-dice.png';
@@ -131,11 +127,7 @@ function diceRoller() {
             dice.src = './images/dice4.png';
             dice.alt = '4';
             document.getElementById('roll-again').textContent = '';
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     }else if(diceNum === 5) {
         dice.src = './images/roll-dice.png';
@@ -143,11 +135,7 @@ function diceRoller() {
             dice.src = './images/dice5.png';
             dice.alt = '5';
             document.getElementById('roll-again').textContent = '';
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     }else if(diceNum === 6) {
         dice.src = './images/roll-dice.png';
@@ -155,11 +143,7 @@ function diceRoller() {
             dice.src = './images/dice6.png';
             dice.alt = '6';
             document.getElementById('roll-again').textContent = 'Roll Again'; 
-            if (player === 0) {
-                redPlayerMove();
-            }else if (player===1) {
-                bluePlayerMove();
-            }
+            detectPlayer();
         },1000);
     }
 }
@@ -226,6 +210,15 @@ function removeEventRedCircle(event) {
         ele.removeEventListener('click', moveRedCircle)
     });
 }
+// function removes onboard red circle's/token's event and switch the player when the diceNum != 6
+function removeRedEventSwitchPlayer() {
+    removeEventRedOn();
+    if (diceNum === 6) {
+        rollDiceClick();
+    } else {
+        switchPlayerTurn();
+    }
+}
 // function for moving redCircles/token which in on the board.
 function moveRedOn(e) {
     removeEventRedCircle();
@@ -236,106 +229,56 @@ function moveRedOn(e) {
         e.target.classList.remove('redOn3');
         redMoveArray[redTargetId].classList.add('redActive','redOn3');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn1') && e.target.classList.value.includes( 'redOn3')) {
         e.target.classList.remove('redOn3');
         redMoveArray[redTargetId].classList.add('redActive','redOn3');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn0')&& e.target.classList.value.includes( 'redOn3')) {
         e.target.classList.remove('redOn3');
         redMoveArray[redTargetId].classList.add('redActive','redOn3');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn3')) {
         e.target.classList.remove('redActive','redOn3');
         removeBlueActive(redTargetId);
         redMoveArray[redTargetId].classList.add('redActive','redOn3');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn1') && e.target.classList.value.includes( 'redOn2')) {
         e.target.classList.remove('redOn2');
         redMoveArray[redTargetId].classList.add('redActive','redOn2');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn0') && e.target.classList.value.includes( 'redOn2')) {
         e.target.classList.remove('redOn2');
         redMoveArray[redTargetId].classList.add('redActive','redOn2');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     }else if (e.target.classList.value.includes('redOn02')) {
         e.target.classList.remove('redActive','redOn2');
         removeBlueActive(redTargetId);
         redMoveArray[redTargetId].classList.add('redActive','redOn2');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     }else if (e.target.classList.value.includes('redOn0') && e.target.classList.value.includes('redOn1')) {
         e.target.classList.remove('redOn1');
         redMoveArray[redTargetId].classList.add('redActive','redOn1');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn1')) {
         e.target.classList.remove('redActive','redOn1');
         removeBlueActive(redTargetId);
         redMoveArray[redTargetId].classList.add('redActive','redOn1');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     } else if (e.target.classList.value.includes('redOn0')) {
         e.target.classList.remove('redActive','redOn0');
         removeBlueActive(redTargetId);
         redMoveArray[redTargetId].classList.add('redActive','redOn0');
         redMoveArray[redTargetId].id = redTargetId;
-        removeEventRedOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeRedEventSwitchPlayer();
     }
 }
 // function for removing the click events on redOnCircles/tokens.
@@ -362,12 +305,7 @@ function redOnCheck() {
             
         }
     })
-    // console.log(moveBoxCheck);
-    // if (moveBoxCheck === true) {
-    //     redOnCheckValue = true;
-        // console.log(redOnCheckValue);
-    // }
-    // redOnCheckValue = false;
+    
 }
 // function decides when the redPlayer can move.
 function redPlayerMove() {
@@ -538,6 +476,15 @@ function removeEventBlueCircle(event) {
             ele.removeEventListener('click', moveBlueCircle)
         });
 }
+// function removes onboard red circle's/token's event and switch the player when the diceNum != 6
+function removeBlueEventSwitchPlayer() {
+        removeEventBlueOn();
+        if (diceNum === 6) {
+            rollDiceClick();
+        } else {
+            switchPlayerTurn();
+        }
+}
 // function for moving blueCircles/token which in on the board.
 function moveBlueOn(e) {
     removeEventBlueCircle();
@@ -547,106 +494,56 @@ function moveBlueOn(e) {
         e.target.classList.remove('blueOn3');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn1') && e.target.classList.value.includes( 'blueOn3')) {
         e.target.classList.remove('blueOn3');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn0')&& e.target.classList.value.includes( 'blueOn3')) {
         e.target.classList.remove('blueOn3');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn3')) {
         e.target.classList.remove('blueActive','blueOn3');
         removeRedActive(blueTargetId);
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn3');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn1') && e.target.classList.value.includes( 'blueOn2')) {
         e.target.classList.remove('blueOn2');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn0') && e.target.classList.value.includes( 'blueOn2')) {
         e.target.classList.remove('blueOn2');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     }else if (e.target.classList.value.includes('blueOn02')) {
         e.target.classList.remove('blueActive','blueOn2');
         removeRedActive(blueTargetId);
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn2');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     }else if (e.target.classList.value.includes('blueOn0') && e.target.classList.value.includes('blueOn1')) {
         e.target.classList.remove('blueOn1');
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn1');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn1')) {
         e.target.classList.remove('blueActive','blueOn1');
         removeRedActive(blueTargetId);
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn1');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     } else if (e.target.classList.value.includes('blueOn0')) {
         e.target.classList.remove('blueActive','blueOn0');
         removeRedActive(blueTargetId);
         blueMoveArray[blueTargetId].classList.add('blueActive','blueOn0');
         blueMoveArray[blueTargetId].id = blueTargetId;
-        removeEventBlueOn();
-        if (diceNum === 6) {
-            rollDiceClick();
-        } else {
-            switchPlayerTurn();
-        }
+        removeBlueEventSwitchPlayer();
     }
 }
 // function for removing the click events on blueOnCircles/tokens.
@@ -687,8 +584,6 @@ function bluePlayerMove() {
             } else {
                 blueCircle.forEach(element => {
                     element.addEventListener('click', moveBlueCircle);
-                    
-                    
                 }) 
             }
         } else if (diceNum === 5){
