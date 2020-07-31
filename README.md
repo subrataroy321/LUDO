@@ -276,7 +276,7 @@ If you like to interact with the code or you are trying to make a similar game. 
 
 [Code Link](https://github.com/subrataroy321/LUDO)
 
-click <img src="./images/Screen Shot 2020-07-31 at 2.55.37 AM.png" height="20px"> to get a copy of the code into your github profile.
+click <img src="./images/Screen Shot 2020-07-31 at 2.55.37 AM.png" height="25px"> to get a copy of the code into your github profile.
 
 
 ## Build By
