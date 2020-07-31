@@ -26,9 +26,9 @@ Ludo (/ˈljuːdoʊ/; from Latin ludo, meaning 'I play') is a strategy board game
 
 Want to know more: [click here](https://en.wikipedia.org/wiki/Ludo_(board_game))
 
-## Softwares used
+## Technology
 
-This is a web based game. It is built using HTML, CSS and JavaScript Programing.
+This game is built using HTML, CSS and JavaScript Programing.
 
 ## Code Snippets of Some Functions
 
