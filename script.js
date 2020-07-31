@@ -222,6 +222,7 @@ function removeRedEventSwitchPlayer() {
 // function for moving redCircles/token which in on the board.
 function moveRedOn(e) {
     removeEventRedCircle();
+    checkWinner();
     moveSound.play();
     redTargetId = diceNum + parseInt(e.target.id);
     // if else condition to move redCircle/token from its exsisting box to a new box using dice value
@@ -488,6 +489,7 @@ function removeBlueEventSwitchPlayer() {
 // function for moving blueCircles/token which in on the board.
 function moveBlueOn(e) {
     removeEventBlueCircle();
+    checkWinner();
     moveSound.play();
     blueTargetId = diceNum + parseInt(e.target.id);
     if (e.target.classList.value.includes('blueOn2') && e.target.classList.value.includes('blueOn3')) {
